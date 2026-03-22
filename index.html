@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VXRG™ | Global Cyber Defense & Intelligence</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-green: #00ff41;
+            --bg-black: #050505;
+            --surface-dark: #0d0d0d;
+            --border-color: #1a1a1a;
+            --text-main: #e0e0e0;
+            --text-dim: #999999;
+            --accent: #111111;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, monospace; }
+
+        body { background-color: var(--bg-black); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+
+        /* 1. Matrix Background */
+        #matrix { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.15; }
+
+        /* Navigation Bar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .brand { font-size: 1.8rem; font-weight: 900; color: var(--primary-green); letter-spacing: 3px; }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary-green); }
+
+        /* Hero Section */
+        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; position: relative; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; letter-spacing: -1px; font-weight: 800; color: white; text-transform: uppercase; }
+        .hero p { color: var(--text-dim); max-width: 700px; font-size: 1.1rem; margin-bottom: 40px; }
+        
+        /* 4. Security Dashboard */
+        .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 80%; margin: -50px auto 50px auto; z-index: 10; position: relative; }
+        .stat-box { background: var(--surface-dark); border: 1px solid var(--border-color); padding: 20px; text-align: center; border-radius: 4px; transition: 0.3s; }
+        .stat-box:hover { border-color: var(--primary-green); box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
+        .stat-box h3 { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 10px; letter-spacing: 1px; }
+        .stat-box p { font-size: 1.2rem; color: var(--primary-green); font-weight: bold; }
+
+        /* 3. Live Terminal */
+        .terminal-container { padding: 40px 10%; background: var(--bg-black); }
+        .terminal { background: #000; border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; font-family: 'Courier New', monospace; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .terminal-header { color: #555; font-size: 0.8rem; margin-bottom: 15px; border-bottom: 1px solid #111; padding-bottom: 5px; }
+        #terminal-output { color: var(--primary-green); font-size: 0.9rem; min-height: 100px; margin-bottom: 10px; white-space: pre-wrap; }
+        .input-line { display: flex; align-items: center; color: var(--primary-green); }
+        .input-line input { background: transparent; border: none; color: white; outline: none; margin-left: 10px; width: 100%; font-family: 'Courier New', monospace; }
+
+        /* Capabilities Section */
+        .capabilities { padding: 80px 10%; background: var(--surface-dark); border-top: 1px solid var(--border-color); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; color: white; margin-bottom: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .cap-card { background: var(--bg-black); padding: 40px; border: 1px solid var(--border-color); transition: 0.4s; }
+        .cap-card:hover { border-color: var(--primary-green); transform: translateY(-5px); }
+        .cap-card h3 { margin-bottom: 15px; color: var(--primary-green); font-size: 1.2rem; }
+
+        /* Global Footer */
+        footer { padding: 60px 10%; border-top: 1px solid var(--border-color); text-align: center; background: #000; }
+        .footer-logo { font-size: 1.2rem; font-weight: 800; color: var(--text-dim); margin-bottom: 15px; letter-spacing: 2px; }
+        .regions { margin-top: 15px; color: var(--primary-green); font-size: 0.8rem; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+    <div class="brand">VXRG SECURITY</div>
+    <div class="nav-links">
+        <a href="#terminal">Terminal</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#intel">Operations</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Valthronis Xyro Genix</h1>
+    <p>Advanced Vulnerability Research & Tactical Cyber Defense Solutions.</p>
+</section>
+
+<div class="dashboard">
+    <div class="stat-box"><h3>DEFENSE STATUS</h3><p>ACTIVE 🟢</p></div>
+    <div class="stat-box"><h3>VULNERABILITIES FOUND</h3><p>74+ REPORTED</p></div>
+    <div class="stat-box"><h3>PRIMARY TARGET</h3><p>SWITZERLAND 🇨🇭</p></div>
+    <div class="stat-box"><h3>SYSTEM REACH</h3><p>GLOBAL</p></div>
+</div>
+
+<section class="terminal-container" id="terminal">
+    <div class="terminal">
+        <div class="terminal-header">VXRG_OS v1.0.4 - SECURE SHELL</div>
+        <div id="terminal-output">Initializing secure protocols...
+System connection established.
+Welcome, Hacker. 
+Type 'help' to see available commands.</div>
+        <div class="input-line">
+            <span>root@vxrg:~#</span>
+            <input type="text" id="terminal-input" autofocus autocomplete="off">
+        </div>
+    </div>
+</section>
+
+<section class="capabilities" id="capabilities">
+    <div class="section-title">
+        <h2>Core Capabilities</h2>
+    </div>
+    <div class="grid">
+        <div class="cap-card">
+            <h3>Cyber Defense</h3>
+            <p>Real-time response to sophisticated threats targeting mission-critical systems.</p>
+        </div>
+        <div class="cap-card">
+            <h3>Intelligence</h3>
+            <p>Global threat analysis leveraging advanced OSINT methodologies.</p>
+        </div>
+        <div class="cap-card">
+            <h3>Red Teaming</h3>
+            <p>Offensive security assessments to identify vulnerabilities before they are exploited.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">VALTHRONIS XYRO GENIX GLOBAL</div>
+    <p>© 2026 VXRG GLOBAL. OPERATING WORLDWIDE.</p>
+    <p class="regions">SWITZERLAND | GERMANY | GLOBAL OPERATIONS</p>
+</footer>
+
+<script>
+    // 1. Matrix Animation Logic
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const chars = "VXRG01SECURE789@#$%^&*";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#00ff41";
+        ctx.font = fontSize + "px monospace";
+        for (let i = 0; i < drops.length; i++) {
+            const text = chars.charAt(Math.floor(Math.random() * chars.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+            drops[i]++;
+        }
+    }
+    setInterval(drawMatrix, 40);
+
+    // 3. Terminal Interaction Logic
+    const input = document.getElementById('terminal-input');
+    const output = document.getElementById('terminal-output');
+    input.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            const cmd = input.value.toLowerCase();
+            let response = "";
+            if(cmd === 'help') response = "Available: help, clear, about, mission, contact";
+            else if(cmd === 'about') response = "VALTHRONIS XYRO GENIX - Global Cyber Intelligence Firm.";
+            else if(cmd === 'mission') response = "Goal: Securing global digital assets & establishing base in Switzerland.";
+            else if(cmd === 'clear') { output.innerHTML = ""; input.value = ""; return; }
+            else response = `Command not found: ${cmd}`;
+            
+            output.innerHTML += `\nroot@vxrg:~# ${input.value}\n${response}`;
+            input.value = '';
+            output.scrollTop = output.scrollHeight;
+        }
+    });
+</script>
+
+</body>
+</html>
+  
