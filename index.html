@@ -183,10 +183,4 @@ Type 'help' to see available commands.</div>
   <input type="password" id="new-pass" placeholder="Create Access Key">
   <button onclick="registerHacker()">CREATE ACCOUNT</button>
   </div>
-function registerHacker() {
-  let user = document.getElementById("new-user").value;
-  let pass = document.getElementById("new-pass").value;
-  localStorage.setItem(user, pass); // വിവരങ്ങൾ ഫോണിൽ/കമ്പ്യൂട്ടറിൽ സേവ് ചെയ്യുന്നു
-  alert("Account Created for " + user + "! Now try to Login.");
-}
 
