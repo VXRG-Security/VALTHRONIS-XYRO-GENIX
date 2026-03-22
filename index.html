@@ -183,4 +183,88 @@ Type 'help' to see available commands.</div>
   <input type="password" id="new-pass" placeholder="Create Access Key">
   <button onclick="registerHacker()">CREATE ACCOUNT</button>
   </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VXRG | Hacker Dashboard</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            border: 2px solid #0f0;
+            padding: 25px;
+            box-shadow: 0 0 20px #0f0;
+            background: rgba(0, 15, 0, 0.9);
+        }
+        h1, h2 { text-align: center; text-transform: uppercase; letter-spacing: 2px; }
+        .roadmap-card {
+            background: #0a0a0a;
+            border-left: 5px solid #0f0;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .roadmap-card:hover {
+            background: #111;
+            box-shadow: 5px 0 10px #0f0;
+        }
+        .step-title { color: #fff; font-size: 1.3em; font-weight: bold; margin-bottom: 10px; display: block; }
+        .status { color: #ffeb3b; font-weight: bold; font-size: 0.9em; }
+        .badge { background: #0f0; color: #000; padding: 4px 12px; font-weight: bold; border-radius: 2px; font-size: 12px; float: right; }
+        .btn-mission {
+            display: block; width: 100%; padding: 15px;
+            background: #0f0; color: #000; border: none;
+            font-size: 1.1em; font-weight: bold; cursor: pointer;
+            margin-top: 30px; text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-mission:hover { background: #fff; color: #000; }
+        hr { border: 0.5px solid #0f0; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>ACCESS GRANTED: ELITE HACKER 🛡️</h1>
+    <p style="text-align: center; color: #888;">Connected to VXRG-INTEL Central Command</p>
+    <hr>
+
+    <h2>🚀 BUG BOUNTY ROADMAP CHALLENGE</h2>
+
+    <div class="roadmap-card">
+        <span class="badge">PHASE 01</span>
+        <span class="step-title">Networking & Linux Fundamentals</span>
+        <p>Master the basics: IP Addressing, DNS, HTTP protocols, and essential Linux/Termux commands.</p>
+        <p class="status">OBJECTIVE: Perform an Nmap scan on a local target.</p>
+    </div>
+
+    <div class="roadmap-card">
+        <span class="badge">PHASE 02</span>
+        <span class="step-title">Web Vulnerability Analysis</span>
+        <p>Learn to identify XSS, SQL Injection, and IDOR. Use Burp Suite to intercept and modify web requests.</p>
+        <p class="status">OBJECTIVE: Execute a successful XSS payload on a test lab.</p>
+    </div>
+
+    <div class="roadmap-card">
+        <span class="badge">PHASE 03</span>
+        <span class="step-title">Advanced Recon & Bug Hunting</span>
+        <p>Enter the world of HackerOne and Bugcrowd. Learn Subdomain Enumeration and VDP reporting.</p>
+        <p class="status">OBJECTIVE: Submit your first report to a VDP (NASA/Google).</p>
+    </div>
+
+    <button class="btn-mission" onclick="alert('MISSION START: Switzerland Lab Infiltration Protocol Initiated...')">INITIALIZE FIRST MISSION</button>
+</div>
+
+</body>
+</html>
 
