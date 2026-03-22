@@ -177,4 +177,16 @@ Type 'help' to see available commands.</div>
 
 </body>
 </html>
-  
+  <div id="signup-box">
+  <h2>JOIN VXRG NETWORK</h2>
+  <input type="text" id="new-user" placeholder="Choose Hacker Name">
+  <input type="password" id="new-pass" placeholder="Create Access Key">
+  <button onclick="registerHacker()">CREATE ACCOUNT</button>
+  </div>
+function registerHacker() {
+  let user = document.getElementById("new-user").value;
+  let pass = document.getElementById("new-pass").value;
+  localStorage.setItem(user, pass); // വിവരങ്ങൾ ഫോണിൽ/കമ്പ്യൂട്ടറിൽ സേവ് ചെയ്യുന്നു
+  alert("Account Created for " + user + "! Now try to Login.");
+}
+
